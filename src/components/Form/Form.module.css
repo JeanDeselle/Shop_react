@@ -1,0 +1,39 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	padding: 3rem 2rem;
+	max-width: 400px;
+	margin: auto;
+	background-color: #fff;
+	color: #333;
+	box-shadow: black 0 0 10px;
+}
+.ctn {
+	display: flex;
+	flex-direction: column;
+}
+.ctn input {
+	border-radius: 0.5rem;
+	padding: 0.2rem 0.6rem;
+	margin-top: 0.3rem;
+	margin-bottom: 1rem;
+	font-size: 1.3rem;
+    color: #00c689;
+    outline: none;
+}
+
+.ctn label {
+	text-align: left;
+	font-size: 1.3rem;
+}
+.form input[type="submit"] {
+	background-color: #ff4c48;
+	color: #fff;
+	border: none;
+	box-shadow: black 0 0 3px;
+    width: fit-content;
+    padding: 0.5rem 4rem;
+    font-size: 1rem;
+    margin: 1rem auto 0 auto;
+    
+}
