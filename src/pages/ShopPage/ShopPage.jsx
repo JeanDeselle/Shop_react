@@ -5,13 +5,8 @@ import Products from "../../ressource/tab";
 import Cards from "../../components/Cards/Cards";
 import style from "./Shop.module.css";
 export default function ShopPage() {
-	const changeStyle = () => {
-		document.querySelector("body").style.backgroundColor = "#333";
-		document.querySelector("body").style.color = "#fff";
-	};
-	changeStyle()
 	return (
-		<main>
+		<main className={style.main}>
 			<Panier />
 			<Disconnect />
 			<h1 className={style.title}>Site de thé</h1>
