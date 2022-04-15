@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import Users from "../../ressource/Users";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import style from "./Form.module.css";
@@ -10,8 +10,8 @@ export default function Form() {
 	const [find, setFind] = useState(null);
 
 	useEffect(() => {
-		console.log("find", find);
-	}, [find]);
+		console.log(Users);
+	}, []);
 
 	const onSubmitForm = (e) => {
 		e.preventDefault();
@@ -20,7 +20,7 @@ export default function Form() {
 
 	const verifAcc = (psd, pwd) => {
 		let exist = false;
-		
+
 		if (psd === "admin") {
 			exist = true;
 			console.log("test");
@@ -30,43 +30,49 @@ export default function Form() {
 		if (psd && pwd) {
 			Users.map((user) => {
 				if (psd === user.pseudo && pwd === user.password) {
-					console.log(user);
 					exist = true;
 				}
 			});
 		}
 		return exist;
 	};
-	
+
 	return (
-		<form onSubmit={onSubmitForm} className={style.form}>
-			<div className={style.ctn}>
-				<label htmlFor="firstname">Pseudo :</label>
-				<input
-					type="text"
-					name="pseudo"
-					id="pseudo"
-					value={pseudo}
-					onChange={(e) => setPseudo(e.target.value)}
-				/>
-			</div>
-			<div className={style.ctn}>
-				<label htmlFor="password">password :</label>
-				<input
-					type="password"
-					name="password"
-					id="password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-			</div>
-			{find === false && (
-				<ErrorMessage>
-					Le pseudo ou le mot de passe entré est incorrect.
-				</ErrorMessage>
-			)}
+		<>
 			{find && <Navigate to="/shop" />}
-			<input type="submit" value="send" />
-		</form>
+			<form onSubmit={onSubmitForm} className={style.form}>
+				<div className={style.ctn}>
+					<label htmlFor="firstname">Pseudo :</label>
+					<input
+						type="text"
+						name="pseudo"
+						id="pseudo"
+						value={pseudo}
+						onChange={(e) => setPseudo(e.target.value)}
+					/>
+				</div>
+				<div className={style.ctn}>
+					<label htmlFor="password">password :</label>
+					<input
+						type="password"
+						name="password"
+						id="password"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+				</div>
+				{find === false && (
+					<ErrorMessage>
+						Le pseudo ou le mot de passe entré est incorrect.
+					</ErrorMessage>
+				)}
+
+				<Link to={`/creation`} className={style.link}>
+					sign in{" "}
+				</Link>
+
+				<input type="submit" value="send" />
+			</form>
+		</>
 	);
 }

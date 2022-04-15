@@ -1,42 +1,44 @@
 .form {
 	display: flex;
 	flex-direction: column;
-	padding: 3rem 2rem;
+	padding: 3rem 5rem;
 	max-width: 400px;
-	margin: auto;
+	margin: 2rem auto;
 	background-color: #fff;
-	color: #333;
+
 	box-shadow: black 0 0 10px;
 }
-.ctn {
-	display: flex;
-	flex-direction: column;
-}
-.ctn input {
+.form input {
 	border-radius: 0.5rem;
 	padding: 0.2rem 0.6rem;
 	margin-top: 0.3rem;
 	margin-bottom: 1rem;
 	font-size: 1.3rem;
-    color: #00c689;
-    outline: none;
+	color: #00c689;
+	outline: none;
 }
-.ctn label {
+
+.form label {
 	text-align: left;
 	font-size: 1.3rem;
 }
+
 .form input[type="submit"] {
 	background-color: #ff4c48;
 	color: #fff;
 	border: none;
 	box-shadow: black 0 0 3px;
-    width: fit-content;
-    padding: 0.5rem 4rem;
-    font-size: 1rem;
-    margin: 1rem auto 0 auto;
-    
+	width: fit-content;
+	padding: 0.5rem 4rem;
+	font-size: 1rem;
+	margin: 1rem auto 0 auto;
 }
 
-.link{
+.form p {
 	text-align: left;
+	margin: 1rem 0 2rem;
+}
+
+.captcha {
+	margin: auto;
 }

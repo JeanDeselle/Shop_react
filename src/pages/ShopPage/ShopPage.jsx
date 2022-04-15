@@ -4,7 +4,9 @@ import Disconnect from "../../components/Disconnect/Disconnect";
 import Products from "../../ressource/tab";
 import Cards from "../../components/Cards/Cards";
 import style from "./Shop.module.css";
+
 export default function ShopPage() {
+	
 	return (
 		<main className={style.main}>
 			<Panier />
@@ -17,7 +19,6 @@ export default function ShopPage() {
 							key={the.id}
 							title={the.name}
 							src={the.imgName}
-							res={"this.responce.bind(this)"}
 							price={the.price}
 						>
 							<div>

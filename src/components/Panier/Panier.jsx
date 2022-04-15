@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../context/globalContext";
 import style from './Panier.module.css'
+
 export default function Panier() {
 	const { panier } = useContext(GlobalContext);
 	

@@ -1,6 +1,7 @@
 import React from "react";
 import BtnAdd from "../BtnAdd/BtnAdd";
 import style from "./Cards.module.css";
+
 export default function Cards(props) {
 	return (
 		<article className={style.cards}>
